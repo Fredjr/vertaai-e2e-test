@@ -61,3 +61,17 @@ export async function getUser(userId: string): Promise<User> {
   return response.json();
 }
 
+/**
+ * Delete a user by ID
+ * @param userId - The ID of the user to delete
+ * @returns void
+ */
+export async function deleteUser(userId: string): Promise<void> {
+  const response = await fetch(`${API_BASE_URL}/users/${userId}`, {
+    method: 'DELETE',
+  });
+  if (!response.ok) {
+    throw new Error(`Failed to delete user: ${response.statusText}`);
+  }
+}
+
