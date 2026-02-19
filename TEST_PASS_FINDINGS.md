@@ -53,3 +53,11 @@ After fixing the passFindings filter to include failed-but-pass findings, all 3 
 
 This demonstrates the complete observe mode experience where users can see ALL signals being monitored.
 
+
+
+## Trigger Test After Fix Deployment
+
+Railway deployed the fix at 14:51:40Z. This commit will trigger a fresh webhook to test the updated passFindings filter.
+
+Expected: All 3 findings visible including MIN_APPROVALS (fail→pass).
+
