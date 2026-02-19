@@ -27,3 +27,9 @@ After fixing the GitHub Check output to show pass findings in observe mode, this
 - ✅ Passing Checks section should now appear
 - All 3 findings should be visible (not just the 'Unable to Evaluate' one)
 
+
+
+## Debug Update
+
+Triggering webhook with debug logging to diagnose why pass findings aren't showing.
+
