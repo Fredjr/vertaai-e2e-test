@@ -28,3 +28,8 @@ Triggering webhook after updating pack scope.
 ## Update 3
 
 Triggering webhook after removing branch filter from pack.
+
+
+## Update 4
+
+Triggering webhook after fixing ES module require() issue.
