@@ -18,3 +18,8 @@ This PR tests the basic YAML DSL Policy Pack system in observe mode.
 ## Update
 
 Triggering webhook after fixing PackStatus enum issue.
+
+
+## Update 2
+
+Triggering webhook after updating pack scope.
