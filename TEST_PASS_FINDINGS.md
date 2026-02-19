@@ -41,3 +41,15 @@ In observe mode, users want to see **all signals being monitored**, not just fai
 ---
 
 **Related**: PR #12 - Initial test that revealed this issue
+
+
+## Final Test - All 3 Findings Should Now Be Visible
+
+After fixing the passFindings filter to include failed-but-pass findings, all 3 findings should now appear:
+
+1. ✅ **Observe Secret Patterns** - PASS (no secrets detected)
+2. ✅ **Observe Approval Patterns** - PASS (0 approvals, but observe mode)
+3. ❓ **Observe PR Template Usage** - UNKNOWN (no template found)
+
+This demonstrates the complete observe mode experience where users can see ALL signals being monitored.
+
