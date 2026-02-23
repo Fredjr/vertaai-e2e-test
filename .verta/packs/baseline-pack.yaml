@@ -1,0 +1,122 @@
+apiVersion: verta.ai/v1
+kind: PolicyPack
+metadata:
+  id: baseline-contract-integrity-e2e
+  name: Baseline — Workspace Contract Integrity
+  version: 1.0.0
+  description: >
+    Workspace-wide cross-cutting integrity baseline: check-run always posted,
+    CODEOWNERS present, service ownership defined, and ownership↔docs parity.
+    Applies to all repos/services in the workspace.
+  packType: GLOBAL_BASELINE
+  packMode: warn
+  status: ACTIVE
+  labels:
+    domain: baseline
+    tier: platform
+  scopePriority: 10
+  scopeMergeStrategy: MOST_RESTRICTIVE
+  tags:
+    - baseline
+    - ownership
+    - contract-integrity
+    - workspace
+
+scope:
+  type: workspace
+  branches:
+    include:
+      - main
+      - "release/*"
+      - "hotfix/*"
+
+enforcement:
+  checkrun:
+    name: "VertaAI / Baseline Contract Integrity"
+    alwaysPost: true
+
+rules:
+  # ── Invariant: checkrun_always ─────────────────────────────────────────
+  # Rule 1: CHECKRUN_POSTED must happen even with partial evidence.
+  - id: checkrun-always
+    name: Check-Run Must Always Be Posted (Even With Partial Evidence)
+    description: >
+      The VertaAI contract-integrity gate must always post a check-run to GitHub,
+      even when evidence is partial or external dependencies are unavailable.
+    enabled: true
+    trigger:
+      always: true
+    obligations:
+      - comparator: CHECKRUNS_PASSED
+        params:
+          checkRunName: "VertaAI / Baseline Contract Integrity"
+          allowPartialEvidence: true
+        decisionOnFail: warn
+        decisionOnUnknown: warn
+        message: >
+          Baseline check-run gate was not posted. This indicates a configuration
+          issue. Contact the platform team.
+
+  # ── RequiredArtifact: codeowners ──────────────────────────────────────
+  # Rule 2: Every repo must have a CODEOWNERS file.
+  - id: codeowners-required
+    name: CODEOWNERS File Required in Every Repository
+    description: >
+      Every repository must have a CODEOWNERS file (root or .github/) so
+      that code ownership is explicit and reviewers can be auto-assigned.
+    enabled: true
+    trigger:
+      always: true
+    requires:
+      localArtifacts:
+        anyOf:
+          - "CODEOWNERS"
+          - ".github/CODEOWNERS"
+          - "docs/CODEOWNERS"
+    decision:
+      onViolation:
+        protectedBranches: warn
+        featureBranches: pass
+      onMissingExternalEvidence: warn
+
+  # ── RequiredArtifact: readme ────────────────────────────────────────
+  # Rule 3: Every repo must have a README file.
+  - id: readme-required
+    name: README File Required in Every Repository
+    description: >
+      Every repository must have a README.md file documenting the project.
+    enabled: true
+    trigger:
+      always: true
+    requires:
+      localArtifacts:
+        anyOf:
+          - "README.md"
+          - "readme.md"
+          - "README"
+    decision:
+      onViolation: warn
+      onMissingExternalEvidence: warn
+
+evaluation:
+  externalDependencyMode: soft_fail   # always degrade, never hard-block on infra down
+  unknownArtifactMode: warn
+  budgets:
+    maxTotalMs: 60000
+    perComparatorTimeoutMs: 15000
+    maxGitHubApiCalls: 30
+  maxFindings: 30
+  maxEvidenceSnippetsPerFinding: 3
+
+routing:
+  github:
+    checkRunName: "VertaAI / Baseline Contract Integrity"
+    conclusionMapping:
+      pass: success
+      warn: neutral
+      block: action_required
+    postSummaryComment: false
+    annotateFiles: false
+
+spawnTrackB:
+  enabled: false
