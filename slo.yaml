@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ServiceLevelObjective
+metadata:
+  name: vertaai-e2e-test
+  tier: tier-1
+spec:
+  availability:
+    target: 99.9
+    window: 30d
+  latency:
+    p95: 200ms
+    p99: 500ms
+  errorRate:
+    target: 0.1
+# Test tier-1 risk scoring
