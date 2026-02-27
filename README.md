@@ -45,3 +45,11 @@ Run tests with: `npm test`
 
 This API is deployed to: https://api.example.com/v1
 
+# Elite v3.0 validation - context-aware rationales, patch previews, drift framing
+# Final 3 High-ROI validation: Split confidence + concise-first
+# CRITICAL FIXES: Split confidence + drift framing + concise-first + enterprise naming
+# TOP-TIER: Headline fix + Governance Impact + Adaptive Verbosity
+# CONSISTENCY & COMPLETENESS: Obligation counting + Conditional requirements + Risk confidence
+# SEMANTIC CONSISTENCY: Remove Overall Confidence + Fix Invariant vs Triggered semantics
+# FIX 5: Broader governance impact phrasing (less domain-specific)
+# FIX 1: Obligation counting consistency (CRITICAL TRUST FIX)
