@@ -12,3 +12,4 @@ spec:
     p99: 500ms
   errorRate:
     target: 0.1
+# Test tier-1 risk scoring
