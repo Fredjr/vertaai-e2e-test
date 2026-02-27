@@ -47,3 +47,4 @@ This API is deployed to: https://api.example.com/v1
 
 # Elite v3.0 validation - context-aware rationales, patch previews, drift framing
 # Final 3 High-ROI validation: Split confidence + concise-first
+# CRITICAL FIXES: Split confidence + drift framing + concise-first + enterprise naming
