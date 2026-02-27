@@ -49,3 +49,4 @@ This API is deployed to: https://api.example.com/v1
 # Final 3 High-ROI validation: Split confidence + concise-first
 # CRITICAL FIXES: Split confidence + drift framing + concise-first + enterprise naming
 # TOP-TIER: Headline fix + Governance Impact + Adaptive Verbosity
+# CONSISTENCY & COMPLETENESS: Obligation counting + Conditional requirements + Risk confidence
