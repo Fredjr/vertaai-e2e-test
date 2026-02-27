@@ -50,3 +50,4 @@ The VertaAI Policy Pack check should show:
 # Trigger check after ObligationKind fix
 # Test Ultimate Track A Phase 1-3
 # Force new check with latest deployment
+# Test applicability fixes
