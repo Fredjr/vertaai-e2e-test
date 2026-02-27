@@ -50,3 +50,4 @@ This API is deployed to: https://api.example.com/v1
 # CRITICAL FIXES: Split confidence + drift framing + concise-first + enterprise naming
 # TOP-TIER: Headline fix + Governance Impact + Adaptive Verbosity
 # CONSISTENCY & COMPLETENESS: Obligation counting + Conditional requirements + Risk confidence
+# SEMANTIC CONSISTENCY: Remove Overall Confidence + Fix Invariant vs Triggered semantics
