@@ -45,3 +45,4 @@ Run tests with: `npm test`
 
 This API is deployed to: https://api.example.com/v1
 
+# Elite v3.0 validation - context-aware rationales, patch previews, drift framing
