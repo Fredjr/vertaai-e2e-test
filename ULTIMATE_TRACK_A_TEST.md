@@ -47,3 +47,4 @@ The VertaAI Policy Pack check should show:
 - [ ] Evidence Trace shows lookup details
 - [ ] Output is human-readable AND debuggable
 # Update
+# Trigger check after ObligationKind fix
