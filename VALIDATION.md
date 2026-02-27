@@ -14,3 +14,4 @@ Expected output should include:
 - Confidence-weighted risk scores
 - Actionable file path templates
 
+# Trigger fresh check with metadata fix
