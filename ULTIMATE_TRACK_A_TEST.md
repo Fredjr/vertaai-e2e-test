@@ -46,3 +46,4 @@ The VertaAI Policy Pack check should show:
 - [ ] Policy Provenance shows pack/rule IDs
 - [ ] Evidence Trace shows lookup details
 - [ ] Output is human-readable AND debuggable
+# Update
