@@ -52,3 +52,4 @@ This API is deployed to: https://api.example.com/v1
 # CONSISTENCY & COMPLETENESS: Obligation counting + Conditional requirements + Risk confidence
 # SEMANTIC CONSISTENCY: Remove Overall Confidence + Fix Invariant vs Triggered semantics
 # FIX 5: Broader governance impact phrasing (less domain-specific)
+# FIX 1: Obligation counting consistency (CRITICAL TRUST FIX)
