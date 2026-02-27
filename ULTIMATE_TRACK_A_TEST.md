@@ -48,3 +48,4 @@ The VertaAI Policy Pack check should show:
 - [ ] Output is human-readable AND debuggable
 # Update
 # Trigger check after ObligationKind fix
+# Test Ultimate Track A Phase 1-3
