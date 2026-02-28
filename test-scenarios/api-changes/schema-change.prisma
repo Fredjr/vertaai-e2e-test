@@ -1,0 +1,29 @@
+// Test Scenario: Database Schema Change Without Migration
+//
+// VIOLATION: This schema change adds a new field but no migration file is created
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String
+  
+  // BREAKING CHANGE: Removed direct email field
+  // email     String   @unique  // REMOVED
+  
+  // NEW FIELD: Added contactInfo JSON field
+  // VIOLATION: No migration file created for this change
+  contactInfo Json    @default("{}")
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  @@map("users")
+}
