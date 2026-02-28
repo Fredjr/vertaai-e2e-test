@@ -25,3 +25,20 @@ This PR simulates a realistic complex scenario to test the governance pipeline w
 7. Evidence Collection
 
 See individual files for details.
+
+## Track A E2E Test - Trigger Re-evaluation
+
+This update triggers a re-evaluation with the latest Railway deployment that includes:
+- ✅ Vector Confidence Model (3 components)
+- ✅ Stable Fingerprints (SHA-256)
+- ✅ Runtime Validation (20 invariants)
+- ✅ Message Catalog (0% freeform prose)
+
+**Deployment fixes applied:**
+- Fixed duplicate `baselineFailures` declaration
+- Fixed `validateSemantics` import in evaluationNormalizer
+- Fixed `validateSemantics` import in ultimateOutputRenderer
+
+**Expected in this evaluation:**
+All Track A features should now be visible in the governance output.
+
